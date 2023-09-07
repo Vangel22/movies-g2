@@ -28,7 +28,7 @@ const Movie = mongoose.model("Movie", movieSchema);
 
 //Add methods here - don't forget multitenancy i.e account_id
 const getAll = async (account_id) => {
-  return await Posts.find({ account_id });
+  return await Movie.find({ account_id });
 };
 
 const getSingle = async (account_id, id) => {
@@ -36,8 +36,8 @@ const getSingle = async (account_id, id) => {
 };
 
 const create = async (data) => {
-  const post = new Movie(data);
-  return await post.save();
+  const movie = new Movie(data);
+  return await movie.save();
 };
 
 const update = async (id, data) => {
